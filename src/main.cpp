@@ -115,7 +115,7 @@ int main(int argc, char *argv[])
         //发布雷达当前数据  
         ladar_pub = nh.advertise<sensor_msgs::LaserScan>("/now", 10);
         //发布最好射击位置的数据，第一个数据为x,第二个数据为y，第三个数据是距离
-        whereToshoot = nh.advertise<std_msgs::Float64MultiArray>("laser_the_best_way_to_shoot",10);
+        whereToshoot = nh.advertise<std_msgs::Float64MultiArray>("/radar/shootPosition",10);
         // whether =nh.advertise<std_msgs::Bool>("whether",10);
         // ladar_pub = nh.advertise<sensor_msgs::PointCloud2>("/now", 10);
         loop_rate.sleep();
